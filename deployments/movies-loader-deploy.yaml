@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: movies-loader
-        image: 530364773324.dkr.ecr.eu-west-2.amazonaws.com/paulappz/movies-loader:develop
+        image: 530364773324.dkr.ecr.eu-west-2.amazonaws.com/paulappz/movies-loader:996acd60b9dd93bf6a67e7bf17d54103c43706bb
         env:
         - name: AWS_REGION
           value: REGION
