@@ -31,6 +31,11 @@ spec:
             secretKeyRef:
               name: mongodb-access
               key: password
+        - name: MONGODB_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-access
+              key: mongodbrootpassword
         - name: MONGODB_DATABASE
           valueFrom:
             secretKeyRef:
