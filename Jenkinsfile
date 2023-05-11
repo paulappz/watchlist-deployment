@@ -12,5 +12,6 @@ node('master'){
 
     stage('Deploy'){
         sh 'kubectl apply -f deployments/'
+       
     }
 }
