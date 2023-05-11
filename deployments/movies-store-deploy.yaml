@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: movies-store
-        image: ID.dkr.ecr.REGION.amazonaws.com/USER/movies-store:develop
+        image: 530364773324.dkr.ecr.eu-west-2.amazonaws.com/paulappz/movies-store:develop
         ports:
         - containerPort: 3000
         env:

@@ -1,7 +1,7 @@
 def region = 'eu-west-2'
 def accounts = [master:'production', preprod:'staging', develop:'sandbox']
 
-node('workers'){
+node('master'){
     stage('Checkout'){
         checkout scm
     }

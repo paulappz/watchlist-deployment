@@ -2,23 +2,23 @@ version: "3.3"
 
 services:
   movies-loader:
-    image: ID.dkr.ecr.REGION.amazonaws.com/mlabouardy/movies-loader:preprod
+    image: 530364773324.dkr.ecr.eu-west-2.amazonaws.com/paulappz/movies-loader:preprod
     environment:
       - AWS_REGION=SQS REGION
-      - SQS_URL=https://sqs.REGION.amazonaws.com/ID/movies_to_parse_staging
+      - SQS_URL=https://sqs.eu-west-2.amazonaws.com/530364773324/movies_to_parse_staging
   
   movies-parser:
-    image: ID.dkr.ecr.REGION.amazonaws.com/mlabouardy/movies-parser:preprod
+    image: 530364773324.dkr.ecr.eu-west-2.amazonaws.com/paulappz/movies-parser:preprod
     environment:
       - AWS_REGION=SQS REGION
-      - SQS_URL=https://sqs.REGION.amazonaws.com/ID/movies_to_parse_staging
+      - SQS_URL=https://sqs.eu-west-2.amazonaws.com/530364773324/movies_to_parse_staging
       - MONGO_URI=mongodb://root:root@mongodb/watchlist?retryWrites=true&w=majority&poolSize=1
       - MONGO_DATABASE=watchlist
     depends_on:
       - mongodb
   
   movies-store:
-    image: ID.dkr.ecr.REGION.amazonaws.com/mlabouardy/movies-store:preprod
+    image: 530364773324.dkr.ecr.eu-west-2.amazonaws.com/paulappz/movies-store:preprod
     environment:
       - MONGO_URI=mongodb://root:root@mongodb/watchlist?retryWrites=true&w=majority&poolSize=1
     ports:
@@ -27,7 +27,7 @@ services:
       - mongodb
 
   movies-marketplace:
-    image: ID.dkr.ecr.REGION.amazonaws.com/mlabouardy/movies-marketplace:preprod
+    image: 530364773324.dkr.ecr.eu-west-2.amazonaws.com/paulappz/movies-marketplace:preprod
     ports:
       - 80:80
 

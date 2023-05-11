@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: movies-marketplace
-        image: ID.dkr.ecr.REGION.amazonaws.com/USER/movies-marketplace:develop
+        image: 530364773324.dkr.ecr.eu-west-2.amazonaws.com/paulappz/movies-marketplace:develop
         ports:
         - containerPort: 80
