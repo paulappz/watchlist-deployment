@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: movies-parser
-        image: 530364773324.dkr.ecr.eu-west-2.amazonaws.com/paulappz/movies-parser:develop
+        image: 530364773324.dkr.ecr.eu-west-2.amazonaws.com/paulappz/movies-parser:e2606f20ec69afb8dda1b42e0be92ff791cf06cf
         env:
         - name: AWS_REGION
           value: REGION
