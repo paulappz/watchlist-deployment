@@ -1,4 +1,4 @@
-def region = 'eu-west-3'
+def region = 'eu-west-2'
 def accounts = [master:'production', preprod:'staging', develop:'sandbox']
 
 node('master'){
