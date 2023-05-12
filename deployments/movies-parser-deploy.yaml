@@ -17,7 +17,7 @@ spec:
         image: 530364773324.dkr.ecr.eu-west-2.amazonaws.com/paulappz/movies-parser:e2606f20ec69afb8dda1b42e0be92ff791cf06cf
         env:
         - name: AWS_REGION
-          value: REGION
+          value: eu-west-2
         - name: SQS_URL
           value: https://sqs.eu-west-2.amazonaws.com/530364773324/movies_to_parse_sandbox
         - name: MONGO_DATABASE
@@ -30,3 +30,22 @@ spec:
             secretKeyRef:
               name: mongodb-access
               key: uri
+        livenessProbe:
+          httpGet:
+              port: 8080
+              path: /alive
+          periodSeconds: 2
+          timeoutSeconds: 2
+          failureThreshold: 2
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          periodSeconds: 3
+        startupProbe:
+          httpGet:
+            path: /alive
+            port: 8080
+          failureThreshold: 6
+          periodSeconds: 5
+          timeoutSeconds: 1

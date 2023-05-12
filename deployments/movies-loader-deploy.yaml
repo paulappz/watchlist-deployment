@@ -17,6 +17,26 @@ spec:
         image: 530364773324.dkr.ecr.eu-west-2.amazonaws.com/paulappz/movies-loader:996acd60b9dd93bf6a67e7bf17d54103c43706bb
         env:
         - name: AWS_REGION
-          value: REGION
+          value: eu-west-2
         - name: SQS_URL
           value: https://sqs.eu-west-2.amazonaws.com/530364773324/movies_to_parse_sandbox
+        livenessProbe:
+          httpGet:
+              port: 8080
+              path: /alive
+          periodSeconds: 2
+          timeoutSeconds: 2
+          failureThreshold: 2
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          periodSeconds: 3
+        startupProbe:
+          httpGet:
+            path: /alive
+            port: 8080
+          failureThreshold: 6
+          periodSeconds: 5
+          timeoutSeconds: 1    
+      
