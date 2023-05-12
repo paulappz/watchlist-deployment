@@ -41,5 +41,9 @@ spec:
             secretKeyRef:
               name: mongodb-access
               key: database
-        periodSeconds: 20
-        failureThreshold: 20
+        startupProbe:
+          initialDelaySeconds: 1
+          periodSeconds: 5
+          timeoutSeconds: 5
+          successThreshold: 1
+          failureThreshold: 1
