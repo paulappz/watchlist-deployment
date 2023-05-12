@@ -5,7 +5,7 @@ metadata:
   namespace: watchlist
   annotations:
     service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
-    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:{region}:{user id}:certificate/{id}
+    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:eu-west-2:530364773324:certificate/ae376574-bdf2-40f2-9442-841015d340f1
     service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "https"
 spec:
   ports:

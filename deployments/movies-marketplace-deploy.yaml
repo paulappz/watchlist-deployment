@@ -17,3 +17,5 @@ spec:
         image: 530364773324.dkr.ecr.eu-west-2.amazonaws.com/paulappz/movies-marketplace:30b71adf418cb38bdb6cdb3c8d75ee205430683a
         ports:
         - containerPort: 80
+        periodSeconds: 20
+        failureThreshold: 20

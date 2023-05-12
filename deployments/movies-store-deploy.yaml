@@ -22,4 +22,6 @@ spec:
           valueFrom:
             secretKeyRef:
               name: mongodb-access
-              key: uri
+              key: ur
+        periodSeconds: 20
+        failureThreshold: 20

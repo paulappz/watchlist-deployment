@@ -20,3 +20,5 @@ spec:
           value: REGION
         - name: SQS_URL
           value: https://sqs.eu-west-2.amazonaws.com/530364773324/movies_to_parse_sandbox
+        periodSeconds: 20
+        failureThreshold: 20
